@@ -1,0 +1,8 @@
+临时环境变量：export FLAG=wrhklm{fefab69202781caac7c2e70f5378fbe2e31686fc}
+需要执行的命令
+mkdir /var/sandbox
+mkdir /var/www/html/templates
+这个文件夹放index.html
+/var/www/html放main.py
+启动flask
+python main.py
