@@ -1,0 +1,4 @@
+1.拿到图片，看exif：https://www.sojson.com/image/exif.html
+2.获取定位信息，改定位格式: https://www.opengps.cn/Map/Tools/GPSConvert.aspx
+3.拿着改好的定位，访问 https://bajiu.cn/ditu/?id=20676 ，查看地图定位
+4.看地图定位，去百度地图搜具体位置
