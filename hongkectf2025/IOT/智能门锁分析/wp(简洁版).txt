@@ -1,0 +1,31 @@
+扫描固件
+binwalk doorlock.bin
+
+扫描密钥提示
+hexdump -C doorlock.bin | tail -n 5
+
+提取文件
+ dd if=doorlock.bin bs=1 skip=525 of=rootfs.squashfs
+unsquashfs -d rootfs rootfs.squashfs
+
+验证结果
+tree rootfs
+预期：
+rootfs/
+├── etc
+│   └── config
+└── README.txt
+
+查看配置
+
+cat rootfs/etc/config
+
+运行脚本
+import base64
+
+encrypted = base64.b64decode("AlUABwIABAADD1QCBgEGAQABVQQHDw8FVVEFDlYFDgJRU1FSAQECAA==")
+key = 0x37
+plaintext = bytes([c ^ key for c in encrypted])
+print("Flag:", f"wrhklm{{{plaintext.decode()}}}")
+
+得到flag
